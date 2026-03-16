@@ -1,0 +1,15 @@
+{
+  "name": "sellers-edge-extension",
+  "version": "1.0.0",
+  "description": "Sellers Edge browser extension",
+  "scripts": {
+    "build:chrome": "tsc && cp manifest.chrome.json dist-chrome/manifest.json && cp -r icons dist-chrome/ && cp popup.html dist-chrome/ && cp popup.js dist-chrome/",
+    "build:firefox": "tsc && cp manifest.firefox.json dist-firefox/manifest.json && cp -r icons dist-firefox/ && cp popup.html dist-firefox/ && cp popup.js dist-firefox/",
+    "build": "npm run build:chrome && npm run build:firefox",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.258",
+    "typescript": "^5.3.3"
+  }
+}

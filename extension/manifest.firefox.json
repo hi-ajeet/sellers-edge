@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "name": "Sellers Edge — Automatic Whatnot Labeling",
+  "version": "1.0.0",
+  "description": "Automatically detects sales and giveaways on Whatnot live streams and sends them to the Sellers Edge desktop app for label printing.",
+
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "https://www.whatnot.com/*",
+    "https://whatnot.com/*"
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.whatnot.com/*", "https://whatnot.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Sellers Edge"
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sellersedge@sellersedge.app",
+      "strict_min_version": "109.0"
+    }
+  }
+}
