@@ -49,8 +49,10 @@ export class PrintQueue extends EventEmitter {
     if (order.event_id) {
       this.seenEventIds.add(order.event_id);
       if (this.seenEventIds.size > 3000) {
-        const first = this.seenEventIds.values().next().value;
-        this.seenEventIds.delete(first);
+        const iterator = this.seenEventIds.values().next();
+if (!iterator.done) {
+  this.seenEventIds.delete(iterator.value);
+}
       }
     }
 
