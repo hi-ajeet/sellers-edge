@@ -71,11 +71,5 @@
       "!**/*.map",
       "!**/node_modules/.cache/**"
     ],
-    "publish": {
-      "provider": "github",
-      "owner": "hi-ajeet",
-      "repo": "sellers-edge",
-      "releaseType": "release"
-    }
   }
 }
